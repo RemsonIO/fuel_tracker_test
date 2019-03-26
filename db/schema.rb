@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_26_133706) do
+ActiveRecord::Schema.define(version: 2019_03_26_144645) do
+
+  create_table "refuel_infos", force: :cascade do |t|
+    t.datetime "date"
+    t.string "vehicle"
+    t.integer "odometer_reading"
+    t.string "refuel_location"
+    t.integer "liters_of_fuel"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
