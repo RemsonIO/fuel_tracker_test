@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2019_03_26_144645) do
 
   create_table "refuel_infos", force: :cascade do |t|
-    t.datetime "date"
+    t.datetime "dated_on"
     t.string "driver"
     t.string "vehicle"
     t.integer "odometer_reading"

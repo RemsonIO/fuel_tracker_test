@@ -1,6 +1,6 @@
 class RefuelInfo < ApplicationRecord
 
-  validates :date, presence: true
+  validates :dated_on, presence: true
   validates :vehicle, presence: true
   validates :driver, presence: true
   validates :odometer_reading, presence: true, numericality: { greater_than: 0 }

@@ -2,7 +2,7 @@ class HandleRefuel
 
   def initialize(params)
     @r = RefuelInfo.new
-    @r.date             = fix_date(params[:date])
+    @r.dated_on         = fix_date(params[:dated_on])
     @r.vehicle          = params[:vehicle]
     @r.driver           = params[:driver]
     @r.refuel_location  = params[:refuel_location]
