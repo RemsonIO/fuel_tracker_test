@@ -1,0 +1,11 @@
+<% status, message = return_alerts(@refuel_info) %>
+alert_box   = $('.refuel-info.alert')[0]
+alert_body = $(alert_box).children('.body')[0]
+
+alert_body.innerHTML    = "<pre>"+ <%= message.to_json.html_safe %>+ "</pre>"
+alert_box.className	    = 'refuel-info alert <%= status %>'
+alert_box.style.display = 'block'
+
+<% if @refuel_info.errors.blank? %>
+  $('#new_refuel_info').find(".erasable input[type=text], .erasable input[type=number]").val("");
+<% end %>

@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Fuel Tracker</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+      <% if current_user && current_user.is_manager? %>
+        <li class="nav-item active">
+          <a class="nav-link" href="/managers">Dashboard <span class="sr-only">(current)</span></a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <% if current_user %>
+    <div class="my-2"><b> <%= current_user.email %> </b></div>
+    <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn my-2 my-lg-0" %>
+  <% else %>
+    <a href="users/sign_in"> Login </a>
+  <% end %>
+
+</nav>
+<br/>

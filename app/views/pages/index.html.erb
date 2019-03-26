@@ -1,8 +1,55 @@
-<h1>Index</h1>
+<div class="container d-flex">
+
+  <div style="flex: 1">
+    <h2>Enter Refueling Details</h2>
+    <%= form_for @refuel_info, url: create_refuel_info_path, remote: true, format: :js do |f| %>
+
+      <div class="flat-pickr-date form-group">
+        <%= f.label :date %><br />
+        <%= f.text_field :date %>
+      </div>
+
+      <div class="erasable">
+        <div class="form-group">
+          <%= f.label :driver %><br />
+          <%= f.text_field :driver %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :vehicle %><br />
+          <%= f.text_field :vehicle %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :odometer_reading %><br />
+          <%= f.number_field :odometer_reading %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :refuel_location %><br />
+          <%= f.text_field :refuel_location %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :liters_of_fuel %><br />
+          <%= f.number_field :liters_of_fuel %>
+        </div>
+      </div>
+
+      <%= f.submit "Submit", class: 'btn btn-primary' %>
 
 
-<% if user_signed_in? %>
-  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-<% else %>
-  <a href="users/sign_in"> Login </a>
-<% end %>
+    <% end %>
+  </div>
+
+  <div style="flex: 1">
+    <div class="refuel-info alert" role="alert" style="display: none;">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="body">
+      </div>
+    </div>
+  </div>
+
+</div>
