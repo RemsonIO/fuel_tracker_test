@@ -1,0 +1,2 @@
+class RefuelInfo < ApplicationRecord
+end
