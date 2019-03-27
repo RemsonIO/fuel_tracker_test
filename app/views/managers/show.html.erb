@@ -15,9 +15,9 @@
     <tbody>
       <% @refuel_infos.each do |rf| %>
         <tr>
-          <th scope="col"><%= %></th>
+          <th scope="col"><%= rf.driver %></th>
           <th scope="col"><%= rf.vehicle %></th>
-          <th scope="col"><%= rf.date.strftime("%b %d %Y %I:%M %P") if rf %></th>
+          <th scope="col"><%= rf.dated_on.strftime("%b %d %Y %I:%M %P") if rf.dated_on %></th>
           <th scope="col"><%= rf.odometer_reading %></th>
           <th scope="col"><%= rf.refuel_location %></th>
           <th scope="col"><%= rf.liters_of_fuel %></th>

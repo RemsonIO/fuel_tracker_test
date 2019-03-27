@@ -1,14 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  date: 2019-03-26 22:46:45
+  dated_on: 2019-03-26 22:46:45
   vehicle: MyString
   odometer_reading: 1
   refuel_location: MyString
   liters_of_fuel: 1
 
 two:
-  date: 2019-03-26 22:46:45
+  dated_on: 2019-03-26 22:46:45
   vehicle: MyString
   odometer_reading: 1
   refuel_location: MyString

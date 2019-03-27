@@ -1,7 +1,7 @@
 
 document.addEventListener("turbolinks:load", function() {
-  
-  flatpickr("#refuel_info_date", {
+
+  flatpickr("#refuel_info_dated_on", {
     enableTime: true,
     maxDate: new Date,
     defaultDate: new Date,

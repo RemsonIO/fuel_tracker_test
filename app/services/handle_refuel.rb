@@ -16,7 +16,9 @@ class HandleRefuel
   end
 
   def fix_date(not_date)
-    Time.at(not_date.to_i)
+    unx = not_date.to_i
+    return nil if unx < 1
+    Time.at(unx)
   rescue
     nil
   end

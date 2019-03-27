@@ -4,8 +4,15 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  before_validation :check_valid_roles
+
   def is_manager?
     role == 'manager'
   end
-  
+
+  private
+  def check_valid_roles
+    errors[:role] << "Invalid Role" unless ['manager','employee'].include?(role)
+  end
+
 end
