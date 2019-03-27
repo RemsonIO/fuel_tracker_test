@@ -7,7 +7,7 @@ class ManagersController < LoginsController
 
   private
   def authenticate_manager
-    return if @current_user && @current_user.role == 'manager'
+    return if @current_user.present? && @current_user.role == 'manager'
     sign_out(@current_user)
     redirect_to '/'
   end

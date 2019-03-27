@@ -3,6 +3,10 @@ require 'rails_helper'
 RSpec.describe PagesController, type: :controller do
 
   context "regardless if someone is logined or not should" do
+    before(:each) do
+      allow(controller).to receive(:current_user).and_return(controller.current_user)
+    end
+    
     context "GET index" do
       it "instantiate new @refuel_info" do
         get :index

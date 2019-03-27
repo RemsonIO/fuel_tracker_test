@@ -7,6 +7,10 @@ RSpec.describe ManagersController, type: :controller do
 
       login_manager
 
+      before(:each) do
+        allow(controller).to receive(:current_user).and_return(controller.current_user)
+      end
+
       it "render show template" do
         get :show
         expect(response).to render_template("show")
@@ -17,9 +21,7 @@ RSpec.describe ManagersController, type: :controller do
       login_employee
 
       before(:each) do
-        if controller.current_user.role != 'manager'
-          allow(controller).to receive(:current_user).and_return(redirect_to ('/'))
-        end
+        allow(controller).to receive(:current_user).and_return(controller.current_user)
       end
 
       it "should be redirected out" do
@@ -30,5 +32,7 @@ RSpec.describe ManagersController, type: :controller do
 
   end
 
+  def before_filter
+  end
 
 end
